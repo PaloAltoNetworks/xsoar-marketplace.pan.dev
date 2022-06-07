@@ -17,7 +17,7 @@ function genMetaData() {
     let metadata = require(meta[0].path);
     marketplace.push(metadata);
   });
-  console.log('marketplace metadata from docusaurus config', { marketplace })
+  
   return marketplace;
 }
 
