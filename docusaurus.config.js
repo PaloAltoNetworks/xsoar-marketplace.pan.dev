@@ -17,7 +17,7 @@ function genMetaData() {
     let metadata = require(meta[0].path);
     marketplace.push(metadata);
   });
-  
+
   return marketplace;
 }
 
@@ -30,7 +30,7 @@ module.exports = {
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.ico",
   organizationName: "PaloAltoNetworks", // Usually your GitHub org/user name.
-  projectName: "marketplace.pan.dev", // Usually your repo name.
+  projectName: "xsoar-marketplace.pan.dev", // Usually your repo name.
   themeConfig: {
     navbar: {
       logo: {
@@ -38,15 +38,9 @@ module.exports = {
         src: "/img/Cortex_XSoar_logos_RGB_Cortex-Ng-Soar-Horizontal.svg",
       },
       items: [
-        {
-          to: "docs/",
-          activeBasePath: "docs",
-          label: "Docs",
-          position: "left",
-        },
         { to: "marketplace", label: "Marketplace", position: "left" },
         {
-          href: "https://github.com/PaloAltoNetworks/marketplace.pan.dev",
+          href: "https://github.com/PaloAltoNetworks/xsoar-marketplace.pan.dev",
           label: "GitHub",
           position: "right",
         },
@@ -59,47 +53,30 @@ module.exports = {
           title: "Docs",
           items: [
             {
-              label: "Style Guide",
-              to: "docs/",
+              label: "Developer Docs",
+              href: "https://xsoar.pan.dev/docs/welcome",
             },
             {
-              label: "Second Doc",
-              to: "docs/doc2/",
+              label: "Become a Technology Partner",
+              to: "https://xsoar.pan.dev/docs/partners/become-a-tech-partner",
             },
           ],
         },
         {
-          title: "Community",
-          items: [
-            {
-              label: "Stack Overflow",
-              href: "https://stackoverflow.com/questions/tagged/docusaurus",
-            },
-            {
-              label: "Discord",
-              href: "https://discordapp.com/invite/docusaurus",
-            },
-            {
-              label: "Twitter",
-              href: "https://twitter.com/docusaurus",
-            },
-          ],
-        },
-        {
-          title: "More",
+          title: "Social",
           items: [
             {
               label: "Blog",
-              to: "blog",
-            },
-            {
-              label: "GitHub",
-              href: "https://github.com/facebook/docusaurus",
-            },
+              href: "https://blog.demisto.com/",
+            }
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} XSOAR Marketplace, Inc. Built with Docusaurus.`,
+      logo: {
+        alt: "Palo Alto Networks for Developers",
+        src: "/img/PANW_Parent_Brand_Primary_Logo_RGB_KO.svg"
+      },
+      copyright: `Copyright © ${new Date().getFullYear()} Palo Alto Networks, Inc.`
     },
     colorMode: {
       defaultMode: "light",
