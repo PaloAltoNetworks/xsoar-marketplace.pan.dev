@@ -38,7 +38,6 @@ module.exports = {
         src: "/img/Cortex_XSoar_logos_RGB_Cortex-Ng-Soar-Horizontal.svg",
       },
       items: [
-        { to: "marketplace", label: "Marketplace", position: "left" },
         {
           href: "https://github.com/PaloAltoNetworks/xsoar-marketplace.pan.dev",
           label: "GitHub",
