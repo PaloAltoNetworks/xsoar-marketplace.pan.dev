@@ -5,20 +5,20 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import { translate } from "@docusaurus/Translate";
-import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
-import IconArrow from "@theme/IconArrow";
-import Layout from "@theme/Layout";
+import React, { useCallback, useEffect, useState } from "react";
 import clsx from "clsx";
 import queryString from "query-string";
-import React, { useCallback, useEffect, useState } from "react";
-import { useMediaQuery } from "react-responsive";
+import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { useLocation } from "react-router-dom";
+import { useMediaQuery } from "react-responsive";
+import { translate } from "@docusaurus/Translate";
 import Button from "../theme/Button";
+import IconArrow from "@theme/IconArrow";
+import Layout from "@theme/Layout";
 import MarketplaceSidebar from "../theme/MarketplaceSidebar";
 import styles from "./styles.module.css";
 
-const TITLE = "🛍️";
+const TITLE = "Palo Alto Networks XSOAR Marketplace";
 const DESCRIPTION = "Palo Alto Networks XSOAR Marketplace";
 
 function capitalizeFirstLetter(string) {

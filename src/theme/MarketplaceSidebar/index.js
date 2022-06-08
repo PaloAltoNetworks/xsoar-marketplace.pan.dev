@@ -4,21 +4,22 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-import isInternalUrl from "@docusaurus/isInternalUrl";
+
+import React, { useCallback, useEffect, useRef, useState } from "react";
+import AsyncSelect from "react-select/async";
+import IconArrow from "@theme/IconArrow";
+import IconMenu from "@theme/IconMenu";
 import Link from "@docusaurus/Link";
-import { isSamePath, useThemeConfig } from "@docusaurus/theme-common";
+import Logo from "@theme/Logo";
+import Select from "react-select";
+import Slideshow from "./slideshow.js";
+import clsx from "clsx";
+import isInternalUrl from "@docusaurus/isInternalUrl";
 import useLockBodyScroll from "@theme/hooks/useLockBodyScroll";
 import useScrollPosition from "@theme/hooks/useScrollPosition";
 import useUserPreferencesContext from "@theme/hooks/useUserPreferencesContext";
 import useWindowSize, { windowSizes } from "@theme/hooks/useWindowSize";
-import IconArrow from "@theme/IconArrow";
-import IconMenu from "@theme/IconMenu";
-import Logo from "@theme/Logo";
-import clsx from "clsx";
-import React, { useCallback, useEffect, useRef, useState } from "react";
-import Select from "react-select";
-import AsyncSelect from "react-select/async";
-import Slideshow from "./slideshow.js";
+import { isSamePath, useThemeConfig } from "@docusaurus/theme-common";
 import styles from "./styles.module.css";
 
 const MOBILE_TOGGLE_SIZE = 24;

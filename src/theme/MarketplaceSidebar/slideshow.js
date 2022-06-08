@@ -1,10 +1,10 @@
 import React from 'react';
-import { Slide } from 'react-slideshow-image';
-import 'react-slideshow-image/dist/styles.css';
 import Link from "@docusaurus/Link";
+import { Slide } from 'react-slideshow-image';
 import image1 from '/static/img/marketplace_banner_images/Marketplace_Vertical_1.png';
 import image2 from '/static/img/marketplace_banner_images/Marketplace_Vertical_2.png';
 import image3 from '/static/img/marketplace_banner_images/Marketplace_Vertical_3.png';
+import 'react-slideshow-image/dist/styles.css';
 
 
 const slideImages = [

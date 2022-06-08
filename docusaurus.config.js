@@ -39,9 +39,87 @@ module.exports = {
       },
       items: [
         {
-          href: "https://github.com/PaloAltoNetworks/xsoar-marketplace.pan.dev",
-          label: "GitHub",
+          label: "Products",
+          items: [
+            {
+              href: "https://panos.pan.dev",
+              label: "PAN-OS",
+              className: "panosItem",
+              target: "_self"
+            },
+            {
+              href: "https://cortex.pan.dev",
+              label: "Cortex Data Lake",
+              className: "cortexItem",
+              target: "_self"
+            },
+            {
+              href: "https://xsoar.pan.dev",
+              label: "Cortex XSOAR",
+              className: "xsoarItem",
+              target: "_self"
+            },
+            {
+              href: "https://prisma.pan.dev",
+              label: "Prisma",
+              className: "prismaItem",
+              target: "_self"
+            },
+          ],
+          position: "right"
+        },
+        {
+          label: "Partners",
+          to: "docs/partners/why-xsoar",
+          activeBaseRegex: "docs/partners",
+          items: [
+            { to: "/docs/partners/why-xsoar", label: "Why Cortex XSOAR?" },
+            {
+              to: "docs/partners/become-a-tech-partner",
+              label: "Become a Partner"
+            },
+            {
+              to: "/docs/partners/premium-packs",
+              label: "Premium Packs"
+            },
+            {
+              to: "/docs/partners/private-offer",
+              label: "Private Offer"
+            },
+            {
+              to: "/docs/partners/adopt",
+              label: "Adopt-a-Pack"
+            },
+            {
+              to: "/docs/partners/certification",
+              label: "Pack Certification"
+            },
+            {
+              to: "/docs/partners/office-hours",
+              label: "Office Hours"
+            },
+            {
+              to: "/docs/partners/development-partners",
+              label: "Development Partners"
+            },
+            {
+              to:
+                "https://start.paloaltonetworks.com/become-a-technology-partner",
+              label: "Sign Up Now"
+            },
+          ],
+          position: "right"
+        },
+        {
+          href: "https://blog.demisto.com/",
+          label: "Blog",
+          position: "right"
+        },
+        {
+          href: "http://github.com/demisto/content/",
           position: "right",
+          className: "header-github-link",
+          "aria-label": "GitHub repository"
         },
       ],
     },
