@@ -18,7 +18,9 @@ import clsx from "clsx";
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import Select from "react-select";
 import AsyncSelect from "react-select/async";
+import Slideshow from "./slideshow.js";
 import styles from "./styles.module.css";
+
 const MOBILE_TOGGLE_SIZE = 24;
 
 function usePrevious(value) {
@@ -419,6 +421,9 @@ function MarketplaceSidebar({
             Displaying <strong>{totalFilteredPacks} </strong>
             of <strong>{totalPacks}</strong> content packs
           </small>
+          <br></br>
+          <br></br>
+          <Slideshow />
         </ul>
       </div>
       {hideableSidebar && (
