@@ -76,7 +76,6 @@ function createReadmeLink(listItem, itemType) {
 
   if (docsLinksJson[normalizedItemName]) {
     listItem.docLink = docsLinksJson[normalizedItemName]
-    console.log('doc link created for', listItem)
     }
    else {
     listItem.docLink = ""
