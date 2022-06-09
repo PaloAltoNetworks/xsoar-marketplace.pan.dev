@@ -79,7 +79,6 @@ MAX_FILES = int(os.getenv('MAX_FILES', -1))
 FILE_REGEX = os.getenv('FILE_REGEX')
 EMPTY_FILE_MSG = 'empty file'
 DEPRECATED_INFO_FILE = f'{os.path.dirname(os.path.abspath(__file__))}/deprecated_info.json' # Reference GitHub raw URL from content-docs repo
-# Fetch the info file to download to specific path, then read it in
 
 # initialize the seed according to the PR branch. Used when selecting max files.
 random.seed(os.getenv('CIRCLE_BRANCH'))
@@ -275,7 +274,6 @@ def process_readme_doc(target_dir: str, content_dir: str, prefix: str,
         verify_mdx_server(content)
         # with open(f'{target_dir}/{id}.md', mode='w', encoding='utf-8') as f:  # type: ignore
         #     f.write(content)
-        print('print doc_info',doc_info)
         return doc_info
     except Exception as ex:
         print(f'fail: {readme_file}. Exception: {traceback.format_exc()}')
