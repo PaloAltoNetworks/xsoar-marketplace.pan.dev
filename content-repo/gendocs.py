@@ -78,7 +78,7 @@ MAX_FAILURES = int(os.getenv('MAX_FAILURES', 15))  # if we have more than this a
 MAX_FILES = int(os.getenv('MAX_FILES', -1))
 FILE_REGEX = os.getenv('FILE_REGEX')
 EMPTY_FILE_MSG = 'empty file'
-DEPRECATED_INFO_FILE = f'{os.path.dirname(os.path.abspath(__file__))}/extra-docs/articles/deprecated_info.json' # Reference GitHub raw URL from content-docs repo
+DEPRECATED_INFO_FILE = f'{os.path.dirname(os.path.abspath(__file__))}/deprecated_info.json' # Reference GitHub raw URL from content-docs repo
 # Fetch the info file to download to specific path, then read it in
 
 # initialize the seed according to the PR branch. Used when selecting max files.
