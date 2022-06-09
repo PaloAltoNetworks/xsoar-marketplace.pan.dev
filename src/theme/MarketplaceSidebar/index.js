@@ -4,15 +4,13 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import AsyncSelect from "react-select/async";
 import IconArrow from "@theme/IconArrow";
-import IconMenu from "@theme/IconMenu";
 import Link from "@docusaurus/Link";
 import Logo from "@theme/Logo";
 import Select from "react-select";
-import Slideshow from "./slideshow.js";
+import Slideshow from "./slideshow";
 import clsx from "clsx";
 import isInternalUrl from "@docusaurus/isInternalUrl";
 import useLockBodyScroll from "@theme/hooks/useLockBodyScroll";
@@ -20,10 +18,9 @@ import useScrollPosition from "@theme/hooks/useScrollPosition";
 import useUserPreferencesContext from "@theme/hooks/useUserPreferencesContext";
 import useWindowSize, { windowSizes } from "@theme/hooks/useWindowSize";
 import { isSamePath, useThemeConfig } from "@docusaurus/theme-common";
+import topContribBanner from "/static/img/TopContributors.png"
 import styles from "./styles.module.css";
-
-const MOBILE_TOGGLE_SIZE = 24;
-
+ 
 function usePrevious(value) {
   const ref = useRef(value);
   useEffect(() => {
@@ -217,6 +214,14 @@ function SelectOne({
   ...props
 }) {
   const { label, options, action, async, state } = item;
+  var selectedOption = null
+  if (state) {
+    selectedOption = options.filter(obj => {
+      if (obj.value == state) {
+        return obj
+      }
+    })
+  }
   const colourStyles = {
     control: (styles) => {
       return {
@@ -249,9 +254,6 @@ function SelectOne({
         ...styles,
         color: "var(--ifm-font-color-base)",
       };
-    },
-    singleValue: (styles) => {
-      color: "var(--ifm-font-color-base)";
     },
   };
 
@@ -288,12 +290,13 @@ function SelectOne({
     <li className="menu__list-item" key={label}>
       <Select
         options={options}
-        placeholder={state ? state : `${label} (${options.length})`}
+        placeholder={selectedOption ? selectedOption.label : `${label} (${options.length})`}
         onChange={(option) => {
           option ? action(option.value) : action("");
         }}
         isClearable={true}
         styles={colourStyles}
+        value={selectedOption ? selectedOption : null}
       />
     </li>
   );
@@ -316,23 +319,37 @@ function DocSidebarItem(props) {
   }
 }
 
+function useShowAnnouncementBar() {
+  const {isAnnouncementBarClosed} = useUserPreferencesContext();
+  const [showAnnouncementBar, setShowAnnouncementBar] = useState(
+    !isAnnouncementBarClosed,
+  );
+  useScrollPosition(({scrollY}) => {
+    if (!isAnnouncementBarClosed) {
+      setShowAnnouncementBar(scrollY === 0);
+    }
+  });
+  return showAnnouncementBar;
+}
+
 function MarketplaceSidebar({
   path,
   sidebar,
   sidebarCollapsible = true,
   onCollapse,
   isHidden,
-  search,
+  setSearchValue,
+  searchValue,
   totalPacks,
   totalFilteredPacks,
+  updateQueryParams
 }) {
+  const showAnnouncementBar = useShowAnnouncementBar();
   const [showResponsiveSidebar, setShowResponsiveSidebar] = useState(false);
   const {
     navbar: { hideOnScroll },
     hideableSidebar,
   } = useThemeConfig();
-  const { isAnnouncementBarClosed } = useUserPreferencesContext();
-  const { scrollY } = useScrollPosition();
   useLockBodyScroll(showResponsiveSidebar);
   const windowSize = useWindowSize();
   useEffect(() => {
@@ -356,15 +373,14 @@ function MarketplaceSidebar({
           styles.menu,
           {
             "menu--show": showResponsiveSidebar,
-            [styles.menuWithAnnouncementBar]:
-              !isAnnouncementBarClosed && scrollY === 0,
+            [styles.menuWithAnnouncementBar]: showAnnouncementBar              
           }
         )}
       >
         <button
           aria-label={showResponsiveSidebar ? "Close Menu" : "Open Menu"}
           aria-haspopup="true"
-          className="button button--secondary button--sm menu__button"
+          className="button button--primary button--sm menu__button"
           type="button"
           onClick={() => {
             setShowResponsiveSidebar(!showResponsiveSidebar);
@@ -380,11 +396,7 @@ function MarketplaceSidebar({
               &times;
             </span>
           ) : (
-            <IconMenu
-              className={styles.sidebarMenuIcon}
-              height={MOBILE_TOGGLE_SIZE}
-              width={MOBILE_TOGGLE_SIZE}
-            />
+              <i className={clsx("fas fa-sliders-h", styles.sidebarMenuIcon)}></i>
           )}
         </button>
         <ul className="menu__list">
@@ -394,15 +406,17 @@ function MarketplaceSidebar({
                 className={styles.input}
                 type="filter"
                 placeholder="What can we help you automate?"
-                onChange={(e) => search(e.target.value)}
+                value={searchValue}
+                onChange={e => {
+                  updateQueryParams("q", e.target.value);
+                  setSearchValue(e.target.value);
+                }}
                 autoComplete="false"
               ></input>
-              <button>
-                <i
-                  title="Keyword Search"
-                  className={clsx("fas fa-search", styles.searchIcon)}
-                ></i>
-              </button>
+              <i
+                title="Keyword Search"
+                className={clsx("fas fa-search", styles.searchIcon)}
+              ></i>
             </div>
           </li>
           <br></br>
@@ -422,8 +436,11 @@ function MarketplaceSidebar({
             Displaying <strong>{totalFilteredPacks} </strong>
             of <strong>{totalPacks}</strong> content packs
           </small>
-          <br></br>
-          <br></br>
+          <div className={styles.contributors}>
+            <Link to="https://xsoar.pan.dev/marketplace/contributors">
+              <img src={topContribBanner} />
+            </Link>
+          </div>
           <Slideshow />
         </ul>
       </div>

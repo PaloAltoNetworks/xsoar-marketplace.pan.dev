@@ -5,7 +5,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-:root {
+ :root {
   --collapse-button-bg-color-dark: #2e333a;
 }
 
@@ -97,6 +97,10 @@
 
 .sidebarMenuIcon {
   vertical-align: middle;
+  fill: white;
+  height: 24px;
+  width: 24px;
+  font-size: 24px;
 }
 
 .sidebarMenuCloseIcon {
@@ -108,6 +112,7 @@
   font-weight: var(--ifm-font-weight-bold);
   line-height: 0.9;
   width: 24px;
+  color: white;
 }
 
 :global(.menu__list) :global(.menu__list) {
@@ -122,10 +127,6 @@
 
 /* Search bar */
 @media screen and (max-width: 966px) {
-  .heroBanner {
-    padding: 1rem;
-  }
-
   .webflow {
     padding: 1rem 1.6rem 1.1rem !important;
   }
@@ -141,10 +142,6 @@
   .searchIcon {
     font-size: 16px !important;
     vertical-align: middle;
-  }
-
-  button {
-    font-size: unset !important;
   }
 }
 
@@ -194,15 +191,12 @@ button {
   background-position: 0% 0%;
   background: linear-gradient(
     to right,
-    var(--ifm-color-danger),
-    var(--ifm-color-info),
-    var(--ifm-color-warning),
     var(--ifm-color-primary),
-    var(--ifm-color-danger),
-    var(--ifm-color-info)
+    var(--ifm-color-primary),
+    var(--ifm-color-primary),
+    var(--ifm-color-primary),
+    var(--ifm-color-primary)
   );
-  background-size: 500% auto;
-  animation: gradient 3s linear infinite;
 }
 
 .webflow input {
@@ -232,4 +226,19 @@ button {
 .searchIcon {
   font-size: 16px;
   vertical-align: middle;
+  line-height: 2.4rem;
+}
+
+.contributors {
+  margin: 1rem 0;
+  font-size: 16px;
+  display: block;
+}
+
+.contributors :hover {
+  border-bottom: 1px;
+}
+
+.contributors[a]{
+  color: black !important;
 }

@@ -28,7 +28,7 @@ module.exports = {
   baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
-  favicon: "img/favicon.ico",
+  favicon: "/img/cortexfavicon.png",
   organizationName: "PaloAltoNetworks", // Usually your GitHub org/user name.
   projectName: "xsoar-marketplace.pan.dev", // Usually your repo name.
   themeConfig: {
@@ -38,6 +38,25 @@ module.exports = {
         src: "/img/Cortex_XSoar_logos_RGB_Cortex-Ng-Soar-Horizontal.svg",
       },
       items: [
+        {
+          href: "https://xsoar.pan.dev/docs/welcome",
+          label: "Developer Docs",
+          position: "left",
+          activeBaseRegex:
+            "docs(/welcome|/index|/concepts|/contributing|/dashboards|/doc_imgs|/documentation|/incidents|/integrations|/packs|/playbooks|/scripts|/tutorials)"
+        },
+        {
+          to: "/docs/reference/articles",
+          label: "Articles",
+          position: "left",
+          activeBaseRegex: "docs/reference/articles"
+        },
+        {
+          to: "/docs/reference/index",
+          label: "Reference",
+          position: "left",
+          activeBaseRegex: "docs/reference/(index|api|integrations|playbooks|releases|scripts)"
+        },
         {
           label: "Products",
           items: [
@@ -70,42 +89,51 @@ module.exports = {
         },
         {
           label: "Partners",
-          to: "docs/partners/why-xsoar",
-          activeBaseRegex: "docs/partners",
           items: [
-            { to: "/docs/partners/why-xsoar", label: "Why Cortex XSOAR?" },
             {
-              to: "docs/partners/become-a-tech-partner",
-              label: "Become a Partner"
+              label: "Why Cortex XSOAR?",
+              href: "https://xsoar.pan.dev/docs/partners/why-xsoar",
+              target: "_self"
             },
             {
-              to: "/docs/partners/premium-packs",
-              label: "Premium Packs"
+              label: "Become a Partner",
+              href: "https://xsoar.pan.dev/docs/partners/become-a-tech-partner",
+              target: "_self"
             },
             {
-              to: "/docs/partners/private-offer",
-              label: "Private Offer"
+              label: "Premium Packs",
+              href: "https://xsoar.pan.dev/docs/partners/premium-packs",
+              target: "_self"
             },
             {
-              to: "/docs/partners/adopt",
-              label: "Adopt-a-Pack"
+              label: "Private Offer",
+              href: "https://xsoar.pan.dev/docs/partners/private-offer",
+              target: "_self"
             },
             {
-              to: "/docs/partners/certification",
-              label: "Pack Certification"
+              label: "Adopt-a-Pack",
+              href: "https://xsoar.pan.dev/docs/partners/adopt",
+              target: "_self"
             },
             {
-              to: "/docs/partners/office-hours",
-              label: "Office Hours"
+              label: "Pack Certification",
+              href: "https://xsoar.pan.dev/docs/partners/certification",
+              target: "_self"
             },
             {
-              to: "/docs/partners/development-partners",
-              label: "Development Partners"
+              label: "Office Hours",
+              href: "https://xsoar.pan.dev/docs/partners/office-hours",
+              target: "_self"
             },
             {
-              to:
-                "https://start.paloaltonetworks.com/become-a-technology-partner",
-              label: "Sign Up Now"
+              label: "Development Partners",
+              href: "https://xsoar.pan.dev/docs/partners/development-partners",
+              target: "_self"
+            },
+            {
+              label: "Sign Up Now",
+              href: "https://start.paloaltonetworks.com/become-a-technology-partner",
+              target: "_self"
             },
           ],
           position: "right"

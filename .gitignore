@@ -1,14 +1,22 @@
-# Dependencies
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
 /node_modules
+/.pnp
+.pnp.js
 
-# Production
-/build
+# testing
+/coverage
 
-# Generated files
+# generated files
 .docusaurus
 .cache-loader
+content-repo/contentItemsDocsLinks.json
 
-# Misc
+# production
+/build
+
+# misc
 .DS_Store
 .env.local
 .env.development.local
@@ -18,11 +26,21 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-
-# Local Netlify folder
-.netlify
+**/.idea/**
+**/.vscode/**
+content-repo/.content
+__pycache__
+static/doc_imgs
+.mypy_cache
+docs/reference
+content-repo/extra-docs/articles/demisto-class.md
+.pytest_cache
+docs/doc_imgs/reference/relative
+static/assets/deprecated*.json
+.python-version
 
 # Content pack details pages
 /src/pages/marketplace/details
 /index
-.index.zip
+index.zip
+index.json

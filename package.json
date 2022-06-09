@@ -10,14 +10,15 @@
     "deploy": "docusaurus deploy",
     "serve": "docusaurus serve",
     "clear": "docusaurus clear",
-    "index": "curl https://storage.googleapis.com/marketplace-dist/content/packs/index.zip > index.zip && unzip -o index.zip && rm index.zip"
+    "index": "curl https://storage.googleapis.com/marketplace-dist/content/packs/index.zip > index.zip && unzip -o index.zip && rm index.zip",
+    "reference-docs": "cd content-repo && ./create-docs.sh"
   },
   "dependencies": {
-    "@docusaurus/core": "2.0.0-alpha.70",
-    "@docusaurus/plugin-ideal-image": "^2.0.0-alpha.70",
-    "@docusaurus/preset-classic": "2.0.0-alpha.70",
+    "@docusaurus/core": "2.0.0-beta.0",
+    "@docusaurus/preset-classic": "2.0.0-beta.0",
     "@mdx-js/react": "^1.6.21",
     "clsx": "^1.1.1",
+    "query-string": "^7.0.0",
     "react": "^16.8.4",
     "react-collapsible": "^2.8.3",
     "react-dom": "^16.8.4",
