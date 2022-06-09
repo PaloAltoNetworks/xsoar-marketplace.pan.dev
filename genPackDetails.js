@@ -13,8 +13,6 @@ catch (exception) { // in case the reference-docs script was not ran before this
     var docsLinksJson = {}
 }
 
-console.log({docsLinksJson})
-
 const contentItemTransformer = {
   integration: "Integrations",
   automation: "Automations",
