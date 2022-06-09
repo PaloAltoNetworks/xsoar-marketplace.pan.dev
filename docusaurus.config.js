@@ -26,7 +26,7 @@ module.exports = {
   tagline: "Browse the XSOAR marketplace. Automate the thing.",
   url: "https://xsoar-marketplace-dev.netlify.app/",
   baseUrl: "/",
-  onBrokenLinks: "throw",
+  onBrokenLinks: "warn",
   onBrokenMarkdownLinks: "warn",
   favicon: "/img/cortexfavicon.png",
   organizationName: "PaloAltoNetworks", // Usually your GitHub org/user name.
@@ -46,13 +46,13 @@ module.exports = {
             "docs(/welcome|/index|/concepts|/contributing|/dashboards|/doc_imgs|/documentation|/incidents|/integrations|/packs|/playbooks|/scripts|/tutorials)"
         },
         {
-          to: "/docs/reference/articles",
+          href: "https://xsoar.pan.dev/docs/reference/articles",
           label: "Articles",
           position: "left",
           activeBaseRegex: "docs/reference/articles"
         },
         {
-          to: "/docs/reference/index",
+          href: "https://xsoar.pan.dev/docs/reference/index",
           label: "Reference",
           position: "left",
           activeBaseRegex: "docs/reference/(index|api|integrations|playbooks|releases|scripts)"
