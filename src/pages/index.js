@@ -531,7 +531,7 @@ function Marketplace() {
         })}
       >
         <div
-          className={clsx("container padding-vert--lg", styles.docItemWrapper, {
+          className={clsx("container padding-vert--sm", styles.docItemWrapper, {
             [styles.docItemWrapperEnhanced]: hiddenSidebarContainer,
           })}
         >
@@ -541,8 +541,8 @@ function Marketplace() {
                 key={pack.id}
                 className={
                   isBreakpoint
-                    ? "col col--6 margin-bottom--lg"
-                    : "col col--3 margin-bottom--lg"
+                    ? "col col--6"
+                    : "col col--3"
                 }
               >
                 <Button

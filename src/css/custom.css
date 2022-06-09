@@ -434,6 +434,10 @@ html[data-theme="dark"] .header-github-link:before {
   border: none;
 }
 
+.contentTableColDesc p {
+  margin-bottom: 0;
+}
+
 .usecaseBadge {
   color: white;
   margin-bottom: 10px;
