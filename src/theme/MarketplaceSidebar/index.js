@@ -437,7 +437,7 @@ function MarketplaceSidebar({
             of <strong>{totalPacks}</strong> content packs
           </small>
           <div className={styles.contributors}>
-            <Link to="https://xsoar.pan.dev/marketplace/contributors">
+            <Link to="/marketplace/contributors">
               <img src={topContribBanner} />
             </Link>
           </div>
