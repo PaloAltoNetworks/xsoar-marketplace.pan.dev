@@ -56,7 +56,7 @@ jobs:
         uses: FirebaseExtended/action-hosting-deploy@276388dd6c2cde23455b30293105cc866c22282d # v0.6-alpha
         with:
           repoToken: "${{ secrets.GITHUB_TOKEN }}"
-          firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_PANDEV }}"
+          firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_PAN_DEV_F1B58 }}"
           projectId: pan-dev-f1b58
           channelId: live
           target: xsoar-marketplace
