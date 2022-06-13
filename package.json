@@ -5,7 +5,7 @@
   "scripts": {
     "docusaurus": "docusaurus",
     "start": "yarn run index && node genPackDetails && docusaurus start",
-    "build": "yarn run index && node genPackDetails && docusaurus build",
+    "build": "yarn run index && yarn run gen-reference-doc-links && node genPackDetails && docusaurus build",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
     "serve": "docusaurus serve",
