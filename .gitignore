@@ -32,7 +32,6 @@ content-repo/.content
 __pycache__
 static/doc_imgs
 .mypy_cache
-docs/reference
 content-repo/extra-docs/articles/demisto-class.md
 .pytest_cache
 docs/doc_imgs/reference/relative
