@@ -9,6 +9,8 @@ jobs:
     if: github.repository_owner	== 'PaloAltoNetworks'
     name: Build
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
 
     steps:
       - name: Checkout repository
@@ -41,6 +43,7 @@ jobs:
         run: yarn build
         env:
           NODE_OPTIONS: "--max-old-space-size=8192"
+          CONTRIB_TOKEN: "${{ secrets.CONTRIB_TOKEN }}"
 
       - uses: actions/upload-artifact@v2
         with:
