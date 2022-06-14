@@ -39,6 +39,8 @@ jobs:
 
       - name: Build site
         run: yarn build
+        env:
+          NODE_OPTIONS: "--max-old-space-size=8192"
 
       - uses: actions/upload-artifact@v2
         with:
