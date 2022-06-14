@@ -24,7 +24,7 @@ function genMetaData() {
 module.exports = {
   title: "Marketplace",
   tagline: "Browse the XSOAR marketplace. Automate the thing.",
-  url: "https://xsoar-marketplace-dev.netlify.app/",
+  url: "https://xsoar-marketplace.pan.dev/",
   baseUrl: "/",
   onBrokenLinks: "warn",
   onBrokenMarkdownLinks: "warn",
@@ -35,54 +35,65 @@ module.exports = {
     navbar: {
       logo: {
         alt: "XSOAR Marketplace",
-        src: "/img/Cortex_XSoar_logos_RGB_Cortex-Ng-Soar-Horizontal.svg",
+        href: "https://xsoar.pan.dev",
+        target: "_self",
+        src: "/img/Cortex_XSoar_logos_RGB_Cortex-Ng-Soar-Horizontal.svg"
       },
       items: [
         {
-          href: "https://xsoar.pan.dev/docs/welcome",
           label: "Developer Docs",
+          href: "https://xsoar.pan.dev/docs/welcome",
           position: "left",
+          target: "_self",
           activeBaseRegex:
             "docs(/welcome|/index|/concepts|/contributing|/dashboards|/doc_imgs|/documentation|/incidents|/integrations|/packs|/playbooks|/scripts|/tutorials)"
         },
         {
-          href: "https://xsoar.pan.dev/docs/reference/articles",
           label: "Articles",
+          href: "https://xsoar.pan.dev/docs/reference/articles",
           position: "left",
+          target: "_self",
           activeBaseRegex: "docs/reference/articles"
         },
         {
-          href: "https://xsoar.pan.dev/docs/reference/index",
           label: "Reference",
+          href: "https://xsoar.pan.dev/docs/reference/index",
           position: "left",
+          target: "_self",
           activeBaseRegex: "docs/reference/(index|api|integrations|playbooks|releases|scripts)"
+        },
+        {
+          label: "Marketplace",
+          to: "https://xsoar-marketplace.pan.dev",
+          target: "_self",
+          position: "left",
         },
         {
           label: "Products",
           items: [
             {
-              href: "https://panos.pan.dev",
               label: "PAN-OS",
+              href: "https://panos.pan.dev",
+              target: "_self",
               className: "panosItem",
-              target: "_self"
             },
             {
-              href: "https://cortex.pan.dev",
               label: "Cortex Data Lake",
+              href: "https://cortex.pan.dev",
+              target: "_self",
               className: "cortexItem",
-              target: "_self"
             },
             {
-              href: "https://xsoar.pan.dev",
               label: "Cortex XSOAR",
+              href: "https://xsoar.pan.dev",
+              target: "_self",
               className: "xsoarItem",
-              target: "_self"
             },
             {
-              href: "https://prisma.pan.dev",
               label: "Prisma",
+              href: "https://prisma.pan.dev",
+              target: "_self",
               className: "prismaItem",
-              target: "_self"
             },
           ],
           position: "right"
@@ -139,12 +150,14 @@ module.exports = {
           position: "right"
         },
         {
-          href: "https://blog.demisto.com/",
           label: "Blog",
+          href: "https://blog.demisto.com/",
+          target: "_self",
           position: "right"
         },
         {
           href: "http://github.com/demisto/content/",
+          target: "_self",
           position: "right",
           className: "header-github-link",
           "aria-label": "GitHub repository"
@@ -160,10 +173,12 @@ module.exports = {
             {
               label: "Developer Docs",
               href: "https://xsoar.pan.dev/docs/welcome",
+              target: "_self"
             },
             {
               label: "Become a Technology Partner",
               to: "https://xsoar.pan.dev/docs/partners/become-a-tech-partner",
+              target: "_self"
             },
           ],
         },
@@ -173,6 +188,7 @@ module.exports = {
             {
               label: "Blog",
               href: "https://blog.demisto.com/",
+              target: "_self"
             }
           ],
         },
