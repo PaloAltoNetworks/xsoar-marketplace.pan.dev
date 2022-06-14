@@ -289,7 +289,7 @@ def main():
     try:
         response = get_inner_pr_request()
         users_list = get_contributors_users(response)
-        with open(contrib_target, 'a', encoding='utf-8') as f:
+        with open(contrib_target, 'w', encoding='utf-8') as f:
             f.write(f'\n {create_grid(users_list)}')
     except requests.exceptions.HTTPError as ex:
         print(f'Requests errors: {ex}')
